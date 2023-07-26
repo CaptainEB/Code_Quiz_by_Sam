@@ -3,19 +3,63 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Code Quiz</title>
 		<link rel="stylesheet" href="./assets/style.css" />
+		<title>Code Quiz</title>
 	</head>
 	<body>
-        <header>
-           <a href="scores.html">View hight scores</a>
-           <p>Time: <span id="timer-span"></span></p> 
-        </header>
-        
-        <main >
+		<header>
+			<a href="scores.html">View hight scores</a>
+			<p id="timer-p">Time: <span id="timer-span"></span></p>
+		</header>
 
-        </main>
+		<main class="main">
+			<section class="question-section" data-q1="q1">
+				<p class="question">How do we make a variable in JavaScript?</p>
+				<ul>
+					<li id="option-a" data-op1>1. &ltp&gt myvariable</li>
+					<li id="option-b" data-op2>2. var myvariable</li>
+					<li id="option-c" data-op3>3. string myvariable</li>
+					<li id="option-d" data-op4>4. class = myvariable</li>
+				</ul>
+			</section>
 
+			<section class="question-section" data-q2="q2">
+				<p class="question">How do we select a class in CSS?</p>
+				<ul>
+					<li id="option-a" data-op1>1. class = myClass</li>
+					<li id="option-b" data-op2>2. .myClass</li>
+					<li id="option-c" data-op3>3. var Class</li>
+					<li id="option-d" data-op4>4. #myClass</li>
+				</ul>
+			</section>
+
+			<section class="question-section" data-q3="q3">
+				<p class="question">In what direction is JavaScript executed?</p>
+				<ul>
+					<li id="option-a" data-op1>1. Top to bottom</li>
+					<li id="option-b" data-op2>2. Bottom to top</li>
+					<li id="option-c" data-op3>3. Right to left</li>
+					<li id="option-d" data-op4>4. Loops first</li>
+				</ul>
+			</section>
+
+			<section class="question-section" data-q3="q3">
+				<p class="question">A very useful tool during debugging JavaScript code is _____</p>
+				<ul>
+					<li id="option-a" data-op1>1. IDE</li>
+					<li id="option-b" data-op2>2. Loops</li>
+					<li id="option-c" data-op3>3. Console.log()</li>
+					<li id="option-d" data-op4>4. PowerShell</li>
+				</ul>
+			</section>
+
+			<section class="answer" id="correct">
+				<p>Correct</p>
+			</section>
+			<section class="answer" id="incorrect">
+				<p>Incorrect</p>
+			</section>
+		</main>
 
 		<script src="./assets/code.jquery.com_jquery-3.7.0.min.js"></script>
 		<script src="./assets/script.js"></script>
