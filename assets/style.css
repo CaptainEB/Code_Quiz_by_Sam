@@ -35,6 +35,10 @@ header a {
 	color: rgb(194, 106, 194);
 }
 
+#scores-page:hover {
+	color: var(--purple);
+}
+
 .start-btn {
 	text-align: left;
 	font-size: 2rem;
@@ -101,4 +105,40 @@ header a {
 	font-size: 4rem;
 	display: none;
 	font-weight: bold;
+}
+
+.input-div {
+	display: flex;
+	height: 4rem;
+}
+
+.input {
+	text-decoration: none;
+	padding: 1rem;
+	margin: 0 2rem;
+	font-size: 2rem;
+	height: auto;
+	border: 1px solid rgba(64, 3, 231, 0.355);
+	border-radius: 1rem;
+	outline: none;
+}
+
+.input:hover,
+.input:focus {
+	border: 1px solid rgba(64, 3, 231, 1);
+}
+
+.submit-btn {
+	text-align: left;
+	font-size: 2rem;
+	text-decoration: none;
+	border: none;
+	border-radius: 0.5em;
+	background-color: var(--purple);
+	color: white;
+	padding: 0.35em 1em;
+}
+
+.submit-btn:hover {
+	background-color: var(--purple-hover);
 }

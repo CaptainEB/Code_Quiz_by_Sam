@@ -5,12 +5,19 @@ var introSec = $(".intro");
 var questionSections = $(".question-section");
 var scoreSec = $(".score-screen");
 var scoreSpan = $("#score-span");
+var userInput = $(".input");
+var submitBtn = $(".submit-btn");
 
 // Global variables
 var timer = 60;
 var answers = ["b", "b", "a", "c"];
 var i = 0;
 var correct = 0;
+var users = [];
+var user = {
+	name: "name",
+	score: 0,
+};
 
 function loadNextQuestion(index) {
 	questionSections.eq(index - 1).hide();
@@ -19,6 +26,7 @@ function loadNextQuestion(index) {
 
 function showScore() {
 	var grade = 0;
+
 	grade = correct * (100 / questionSections.length);
 	scoreSec.show();
 	scoreSpan.text(grade);
@@ -58,4 +66,14 @@ $(document).on("click", function (event) {
 			loadNextQuestion(i);
 		}, 3000);
 	}
+});
+
+submitBtn.on("click", function (event) {
+	var input = userInput.val().trim();
+	var finalGrade = showScore();
+	user.name = input;
+	user.score = finalGrade;
+	users = JSON.parse(localStorage.getItem("users")) || [];
+	users.push(user);
+	localStorage.setItem("users", JSON.stringify(users));
 });
