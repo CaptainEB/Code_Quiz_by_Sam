@@ -97,6 +97,8 @@ header a {
 	background-color: var(--purple-hover);
 }
 
-.answer {
+.score-screen {
+	font-size: 4rem;
 	display: none;
+	font-weight: bold;
 }
