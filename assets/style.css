@@ -35,10 +35,43 @@ header a {
 	color: rgb(194, 106, 194);
 }
 
-#scores-page:hover {
+header a:hover {
 	color: var(--purple);
 }
+/* ------------------------------------- */
+/* This is for scores.html */
+.scores-main {
+	margin-top: 3rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
 
+.scores-main p {
+	font-weight: bold;
+	font-size: 3rem;
+}
+
+#scores-ul {
+	line-height: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+#scores-ul li {
+	text-align: center;
+	border-radius: 1rem;
+	width: 15rem;
+	margin: .5rem;
+	padding: 1rem;
+	background-color: rgba(194, 106, 194, .5);
+}
+
+/* ------------------------------------- */
+/* this is for the index.html */
 .start-btn {
 	text-align: left;
 	font-size: 2rem;

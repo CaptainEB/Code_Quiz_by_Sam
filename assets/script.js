@@ -1,4 +1,4 @@
-// HTML refrences
+// HTML refrences ----> index.html
 var startBtn = $(".start-btn");
 var timerSpan = $("#timer-span");
 var introSec = $(".intro");
@@ -7,6 +7,9 @@ var scoreSec = $(".score-screen");
 var scoreSpan = $("#score-span");
 var userInput = $(".input");
 var submitBtn = $(".submit-btn");
+
+//HTML refrences ----> scores.html
+var highScoresPage = $("#scores-ul");
 
 // Global variables
 var timer = 60;
@@ -18,6 +21,18 @@ var user = {
 	name: "name",
 	score: 0,
 };
+
+// function updateScorePage(users) {
+// 	// console.log(users);
+// 	// highScoresPage.empty();
+// 	// for (var j = 0; j < users.length; j++) {
+// 	// 	var li = $("<li>");
+// 	// 	li.text(users[j].name + ": " + users[j].score);
+// 	// 	highScoresPage.append(li);
+// 	// }
+// 	console.log("why is this code not working?");
+// 	highScoresPage.append("<li>this is the score page</li>");
+// }
 
 function loadNextQuestion(index) {
 	questionSections.eq(index - 1).hide();
@@ -77,3 +92,11 @@ submitBtn.on("click", function (event) {
 	users.push(user);
 	localStorage.setItem("users", JSON.stringify(users));
 });
+
+highScoresPage.empty();
+users = JSON.parse(localStorage.getItem("users")) || [];
+for (var j = 0; j < users.length; j++) {
+	var li = $("<li>");
+	li.text(users[j].name + ": " + users[j].score);
+	highScoresPage.append(li);
+}
