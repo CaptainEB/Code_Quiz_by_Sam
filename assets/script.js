@@ -12,7 +12,7 @@ var submitBtn = $(".submit-btn");
 var highScoresPage = $("#scores-ul");
 
 // Global variables
-var timer = 60;
+var timer = 5;
 var answers = ["b", "b", "a", "c"];
 var i = 0;
 var correct = 0;
@@ -22,7 +22,7 @@ var user = {
 	score: 0,
 };
 
-// function updateScorePage(users) {
+// function updateScorePage() {
 // 	// console.log(users);
 // 	// highScoresPage.empty();
 // 	// for (var j = 0; j < users.length; j++) {
@@ -52,10 +52,11 @@ startBtn.on("click", function () {
 	var timerInterval = setInterval(() => {
 		timer--;
 		timerSpan.text(timer);
-		if (i >= 4) {
+		if (i >= 4 || timer <= 0) {
 			clearInterval(timerInterval);
 			timerSpan.text(0);
-			setTimeout(showScore, 2700);
+			$("#empty").empty();
+			setTimeout(showScore, 3000);
 		}
 	}, 1000);
 	introSec.hide();
@@ -63,7 +64,12 @@ startBtn.on("click", function () {
 });
 
 $(document).on("click", function (event) {
-	if (event.target.dataset.option === "op" && event.target.parentElement.dataset.answered !== "answered" && event.target.id === answers[i]) {
+	if (
+		event.target.dataset.option === "op" &&
+		event.target.parentElement.dataset.answered !== "answered" &&
+		event.target.id === answers[i] &&
+		timer > 0
+	) {
 		console.log("correct");
 		event.target.parentElement.dataset.answered = "answered";
 		event.target.style.backgroundColor = "green";
@@ -72,7 +78,12 @@ $(document).on("click", function (event) {
 		setTimeout(function () {
 			loadNextQuestion(i);
 		}, 3000);
-	} else if (event.target.dataset.option === "op" && event.target.parentElement.dataset.answered !== "answered" && event.target.id !== answers[i]) {
+	} else if (
+		event.target.dataset.option === "op" &&
+		event.target.parentElement.dataset.answered !== "answered" &&
+		event.target.id !== answers[i] &&
+		timer > 0
+	) {
 		console.log("incorrect");
 		event.target.parentElement.dataset.answered = "answered";
 		event.target.style.backgroundColor = "red";
