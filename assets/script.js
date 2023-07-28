@@ -36,6 +36,7 @@ function showScore() {
 	return grade;
 }
 
+// click handler for start button
 startBtn.on("click", function () {
 	var timerInterval = setInterval(() => {
 		timer--;
@@ -51,6 +52,7 @@ startBtn.on("click", function () {
 	loadNextQuestion(i);
 });
 
+// click handler for questions
 $(document).on("click", function (event) {
 	if (
 		event.target.dataset.option === "op" &&
@@ -82,6 +84,7 @@ $(document).on("click", function (event) {
 	}
 });
 
+// click handler for submit button
 submitBtn.on("click", function (event) {
 	var input = userInput.val().trim();
 	var finalGrade = showScore();
@@ -92,6 +95,7 @@ submitBtn.on("click", function (event) {
 	localStorage.setItem("users", JSON.stringify(users));
 });
 
+// this updates the local storage
 highScoresPage.empty();
 users = JSON.parse(localStorage.getItem("users")) || [];
 for (var j = 0; j < users.length; j++) {
