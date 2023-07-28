@@ -12,7 +12,7 @@ var submitBtn = $(".submit-btn");
 var highScoresPage = $("#scores-ul");
 
 // Global variables
-var timer = 5;
+var timer = 60;
 var answers = ["b", "b", "a", "c"];
 var i = 0;
 var correct = 0;
@@ -21,18 +21,6 @@ var user = {
 	name: "name",
 	score: 0,
 };
-
-// function updateScorePage() {
-// 	// console.log(users);
-// 	// highScoresPage.empty();
-// 	// for (var j = 0; j < users.length; j++) {
-// 	// 	var li = $("<li>");
-// 	// 	li.text(users[j].name + ": " + users[j].score);
-// 	// 	highScoresPage.append(li);
-// 	// }
-// 	console.log("why is this code not working?");
-// 	highScoresPage.append("<li>this is the score page</li>");
-// }
 
 function loadNextQuestion(index) {
 	questionSections.eq(index - 1).hide();
@@ -56,7 +44,7 @@ startBtn.on("click", function () {
 			clearInterval(timerInterval);
 			timerSpan.text(0);
 			$("#empty").empty();
-			setTimeout(showScore, 3000);
+			setTimeout(showScore, 2700);
 		}
 	}, 1000);
 	introSec.hide();
