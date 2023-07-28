@@ -2,7 +2,7 @@
 
 ---
 
-## Live URL:
+## Live URL: https://captaineb.github.io/Code_Quiz_by_Sam/
 
 Here are some screenshots of the website:
 ![img1](./assets/img/img1.png)
