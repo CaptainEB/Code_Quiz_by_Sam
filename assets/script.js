@@ -75,6 +75,7 @@ $(document).on("click", function (event) {
 		timer > 0
 	) {
 		console.log("incorrect");
+		timer -= 5;
 		event.target.parentElement.dataset.answered = "answered";
 		event.target.style.backgroundColor = "red";
 		i++;
